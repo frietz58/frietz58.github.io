@@ -23,7 +23,7 @@ email: 5rietz@informatik.uni-hamburg.de
 description: >- # this means to ignore newlines until "baseurl:"
   You've found my blog, awesome! Here I write about topics like  Machine Learning,
   Artificial Intelligence, Linux Sysadmin tasks or advanced Python programming.
-  Go brew a coffee ☕ and have fun exploring my blog ;)  
+  Go brew a coffee ☕ and have fun exploring what I have to share ;)  
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.compsci.blog" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb

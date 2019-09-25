@@ -1,0 +1,18 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "{{ site.theme }}";
+.author-pic {
+    border-radius: 50%;
+    width: 200px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.highlight_one{
+    color: #d14
+}

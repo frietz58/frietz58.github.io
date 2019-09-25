@@ -3,24 +3,18 @@ layout: page
 title: About
 permalink: /about/
 ---
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
 
-<h2>About me</h2>
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+<img src="/assets/img/me.jpg" class="author-pic">
+<p> Hey, I am Finn 😃. Currently, I'm working on getting my Master's Degree in Computer Science at the University of Hamburg, Germany. I've got a Bachelor in Human-Computer Interaction, which is an interdisciplinary study path, seeking to combine cognitive principals from Psychology with Computer Science. </p>
 
-<h2>About this blog</h2>
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+<p> Though, during the three years of completing that degree, I've developed a greater interest in other areas of Computer Science, mainly in the field of Artificial Intelligence and Data Science. </p>
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+<p> This leads me to <span class="highlight_one">this blog</span>. You can expect the majority of issues here to be related to Machine Learning, Artificial Intelligence, advanced Python programming, and Linux Sysadmin tools. I will write about a topic when I feel like there is a non-trivial problem at hand, for which I couldn't quickly find a solution online. </p>
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+<p> I have read many great blogs and tutorials, but also some that didn't delight me as much. I try to build upon that, contribute to the community, and fill gaps where I experience a lack of material and documentation. However, you might also find me writing about topics that are already well covered (like the different versions and implementations of the Gradient Descent Algorithm), in which case I simply wanted to take my spin on the topic ;) </p>
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+<p> If at the end of the day, a handful of people found something useful on this blog, I am happy and would see this as an absolute win. <p/>
 
-
-[jekyll-organization]: https://github.com/jekyll
+<p> Yours,<br>
+<i>Finn Rietz.</i> </p>
 
