@@ -20,6 +20,7 @@
 
 title: A CS students notebook
 email: 5rietz@informatik.uni-hamburg.de
+author: Finn Rietz
 description: >- # this means to ignore newlines until "baseurl:"
   You've found my blog, awesome! Here I write about topics like  Machine Learning,
   Artificial Intelligence, Linux Sysadmin tasks or advanced Python programming.
@@ -34,6 +35,8 @@ theme: minima
 # theme: bulma-clean-theme
 plugins:
   - jekyll-feed
+
+permalink: /:categories/:title/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
