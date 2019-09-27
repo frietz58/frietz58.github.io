@@ -16,7 +16,7 @@ layout: default
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
+        <h3 class="no-margin-bot">
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
@@ -24,6 +24,7 @@ layout: default
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
+        <p class="post-summary">{{ post.summary }}</p>
       </li>
       {%- endfor -%}
     </ul>
