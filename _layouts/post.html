@@ -38,10 +38,22 @@ layout: default
         {% assign sections = page.sections %}
       {% endif %}
       <span class="no-margin-bot text-highlight-gray">Tabel of contents: </span> 
+      <!--
+      <p>{{ sections }}</p>
+      <p>{{ sections.section1.text }}</p>
+      <p>{{ sections.section2.text }}</p>
+      -->
       <ul>
       {% for section in sections %}
+        <!-- 
+        <p>{{ section }}</p>
+        <p>Text: {{ section[1].text }}</p>
+        {% for attribute in section %}
+          <p>{{ attribute }}</p>
+        {% endfor %}
+        -->
         <li>
-          <a href="#{{ section }}">{{ section }}</a>
+          <a href="#{{ section[1].id }}">{{ section[1].text }}</a>
         </li>
       {% endfor %}
     </ul>
