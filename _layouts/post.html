@@ -30,6 +30,22 @@ layout: default
       {% unless forloop.last %} | {% endunless %}
       {% endfor %}
     </div>
+
+    <div class="table-of-contents">
+      {% if post %}
+        {% assign sections = post.sections %}
+      {% else %}
+        {% assign sections = page.sections %}
+      {% endif %}
+      <span class="no-margin-bot text-highlight-gray">Tabel of contents: </span> 
+      <ul>
+      {% for section in sections %}
+        <li>
+          <a href="#{{ section }}">{{ section }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    </div>
       
   </header>
 
