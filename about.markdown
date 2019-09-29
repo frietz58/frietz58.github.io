@@ -17,4 +17,8 @@ permalink: /about/
 
 <p> Yours,<br>
 <i>Finn Rietz.</i> </p>
+<br>
+<br>
+<br>
+While you're here, check out <a href="https://imgs.xkcd.com/comics/exploits_of_a_mom.png">my favorite xkcd</a>.
 
