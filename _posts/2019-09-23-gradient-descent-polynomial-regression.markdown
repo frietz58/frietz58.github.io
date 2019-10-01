@@ -4,7 +4,7 @@ title:  "Implementing Polynomial Regression with Gradient Descent"
 date:   2019-09-23 21:57:43 +0200
 categories: [Python, Machine Learning]
 summary: "Learn how to implement the Gradient Descent Algorithm on a Polynomial Regression example."
-
+mathjax: true
 ---
 
 <h2 id="polynomial_regression">Polynomial Regression</h2>
