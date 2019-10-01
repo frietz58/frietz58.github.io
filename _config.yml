@@ -36,7 +36,11 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# for categories to work corectly
 permalink: /:categories/:title/
+
+# for math / tex support
+markdown: kramdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.

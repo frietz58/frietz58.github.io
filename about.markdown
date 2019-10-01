@@ -20,5 +20,5 @@ permalink: /about/
 <br>
 <br>
 <br>
-While you're here, check out <a href="https://imgs.xkcd.com/comics/exploits_of_a_mom.png">my favorite xkcd</a>.
+While you're here, check out <a href="https://xkcd.com/327/" target="_blank">my favorite xkcd</a>.
 
