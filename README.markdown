@@ -28,19 +28,19 @@ And that's about it.
 
 
 
-##Running my blog on localhost
+## Running my blog on localhost
 
 If you wan't to get a better Idea of how things work I encourage you to clone this repository and run my blog on localhost (given that you have Jekyll correctly installed):
 
-```bash
+```
 git clone https://github.com/MiddyGoesDev/MiddyGoesDev.github.io.git finns_blog
 ```
 
-```bash
+```
 cd finns_blog
 ```
 
-```bash
+```
 bundle exec jekyll serve
 ```
 
