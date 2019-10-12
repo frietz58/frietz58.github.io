@@ -19,16 +19,16 @@
 # in the templates via {{ site.myvariable }}.
 
 title: A CS students notebook
-email: 5rietz@informatik.uni-hamburg.de
+email: 5rietz{at}informatik{dot}uni-hamburg{dot}de
 author: Finn Rietz
 description: >- # this means to ignore newlines until "baseurl:"
   You've found my blog, awesome! Here I write about topics like  Machine Learning,
   Artificial Intelligence, Linux Sysadmin tasks or advanced Python programming.
-  Go brew a coffee ☕ and have fun exploring what I have to share ;)  
+  Go brew a coffee ☕ and have fun exploring my blog ;)  
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.compsci.blog" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
-github_username:  MiddyGoesDev
+github_username:  frietz58
 
 # Build settings
 theme: minima
