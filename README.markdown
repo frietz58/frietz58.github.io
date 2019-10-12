@@ -33,7 +33,7 @@ And that's about it.
 If you wan't to get a better Idea of how things work I encourage you to clone this repository and run my blog on localhost (given that you have Jekyll correctly installed):
 
 ```
-git clone https://github.com/MiddyGoesDev/MiddyGoesDev.github.io.git finns_blog
+git clone https://github.com/frietz58/frietz58.github.io.git
 ```
 
 ```
