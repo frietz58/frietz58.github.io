@@ -7,43 +7,21 @@ summary: "Learn how you can backup any Postgress database table into a GoogleDri
 
 ---
 
+In this post I will explain how to automate the process of backuping a postgres database table into a GoogleDrive cloud storage location. In my approach, we use two scripts to accomplish this: One script to produce the backup files and a second script that takes care of the uploading process. 
+Note that it should be trivial to adapt this solution to automatically backup anything into the cloud, simply change the shell script that, in this case, generate the .sql dumps of the desired postgres database table. 
+
+If just want to get started, the [README of this project](https://github.com/frietz58/postgres_googledrive_backup) on Github contains all the relevant steps aswell ;)
+
+
 <h2 id="dumping_postgres_table">Dumping a postgres table</h2>
+First, we will take a look at how we can backup a postgres database table (If you wish to backup something else, you should start here). For this, we use the command `pg_dump [dbname]`, which can create script or archive dumps of any given database. I've chosen to use script dumps which are "plain-text files containing the SQL commands required to reconstruct the database to the state it was in at the time it was saved"  -- <cite><a href="https://www.postgresql.org/docs/9.3/app-pgdump.html" target="_blank">postgres documentation</a></cite>. <br>
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+bla
 
 <h2 id="uploading_to_googledrive">Uploading to GoogleDrive</h2>
 
-Jekyll also offers powerful support for code snippets:
+<h3 id="enabling_v3_api">Enabling the Drive v3 API</h3>
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
 <h2 id="automating_via_cron">Automating execution via Crontab</h2>
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Jekyll requires blog post files to be named according to the following format:
-
-`YEAR-MONTH-DAY-title.MARKUP`
-
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
