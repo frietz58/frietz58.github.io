@@ -84,12 +84,10 @@ sudo su postgres
 Once we are the postgres user, we can edit the crontab using the following command:
 ```
 crontab -e
-```
+
 50 23 * * * /home/pcadmin/automatic_backup/cron_backup.sh /home/pcadmin/automatic_backup/config.yaml > /tmp/backup.log
 55 23 * * * /home/pcadmin/backup_venv/bin/python3 /home/pcadmin/automatic_backup/drive_upload.py -cf /home/pcadmin/automatic_backup/config.yaml >> /tmp/backup.log
-
 ```
-
 
 If you wish to run the backup process daily at a given specific time, the cron prefix is `23 50 * * *` for every day at 23:50. Take a look at the crontab.md file, which is pretty close to what I am running on my linux server. Both scripts except one paramaeter, which is the path to the `config.yaml` file. So make sure to adjust that path and also make sure that the paths in the `config.yaml` are also correct. 
 
