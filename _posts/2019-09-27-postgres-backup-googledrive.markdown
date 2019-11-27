@@ -7,13 +7,13 @@ summary: "Learn how you can backup any Postgress database table into a GoogleDri
 
 ---
 
-In this post I will explain how to automate the process of backuping a postgres database table into a GoogleDrive cloud storage location. In my approach, we use two scripts to accomplish this: One script to produce the backup files and a second script that takes care of the uploading process. 
-Note that it should be trivial to adapt this solution to automatically backup anything else into the cloud, simply change the shell script that, in this case, generate the .sql dumps of the desired postgres database table. 
+In this post I will explain how to automate the process of backuping a postgres database table into a GoogleDrive cloud storage location. In my approach, we use two scripts to accomplish this: One script to produce the backup files and a second script that takes care of the uploading process.
+Note that it should be trivial to adapt this solution to automatically backup anything else into the cloud, simply change the shell script that, in this case, generate the .sql dumps of the desired postgres database table.
 
 For now, clone the repository and we are good to go:
 ```
 git clone https://github.com/frietz58/postgres_googledrive_backup.git
-``` 
+```
 
 If just want to get started, the [README of this project](https://github.com/frietz58/postgres_googledrive_backup) on Github contains all the relevant steps aswell ;)
 
@@ -21,7 +21,10 @@ Note that <span class="text-highlight-red">**the installation process requires a
 
 
 <h2 id="dumping_postgres_table">Dumping a postgres table</h2>
-First, we will take a look at how we can backup a postgres database table (If you wish to backup something else, you should start here). For this, we use the command `pg_dump [dbname]`, which can create script or archive dumps of any given database. I've chosen to use script dumps which are "plain-text files containing the SQL commands required to reconstruct the database to the state it was in at the time it was saved"  -- <cite><a href="https://www.postgresql.org/docs/9.3/app-pgdump.html" target="_blank">postgres documentation</a></cite>. <br>
+First, we will take a look at how we can backup a postgres database table (If you wish to backup something else, you should start here). For this, we use the command `pg_dump [dbname]`, which can create script or archive dumps of any given database. I've chosen to use script dumps which are
+<blockquote>
+<p>"plain-text files containing the SQL commands required to reconstruct the database to the state it was in at the time it was saved." -- <cite><a href="https://www.postgresql.org/docs/9.3/app-pgdump.html" target="_blank">postgres documentation</a></cite></p>
+</blockquote>
 
 Specifically, in the cron_backup.sh script, the line that produces the .sql dumb file is:
 ```
@@ -32,7 +35,7 @@ This create the .sql dump of `$target_db` in the folder `$save_dir`, where the n
 ```
 sudo -i -u postgres pg_dump $target_db > dump.sql
 ```
-Here, `-i` runs the command as an <a href="https://www.sudo.ws/man/1.8.3/sudo.man.html#i-command" target="_blank">login shell</a> and `-u` provides the <a href="https://www.sudo.ws/man/1.8.3/sudo.man.html#u-user" target="_blank">target user</a>. When we automate this process, we use the crontab of the postgres user to take care of this, as explained <a href="#automating_via_cron">below</a>. 
+Here, `-i` runs the command as an <a href="https://www.sudo.ws/man/1.8.3/sudo.man.html#i-command" target="_blank">login shell</a> and `-u` provides the <a href="https://www.sudo.ws/man/1.8.3/sudo.man.html#u-user" target="_blank">target user</a>. When we automate this process, we use the crontab of the postgres user to take care of this, as explained <a href="#automating_via_cron">below</a>.
 
 The rest of the cron_backup.sh script parses the .yaml configuration file, sets varable like `$ip4_addr` or `$timestamp` and echo some log messages. If you don't neet dynamic file names and can assure that the `$save_dir` always exists, you could drastically shorten the script :)
 
@@ -47,15 +50,15 @@ pip install -r postgres_googledrive_backup/requirements.txt
 Once you've installed the requirements, you need to enable the drive api for you Google account. I recommend that you create a new Google account specifically for storing the backups. Which is what we will do in the next section.
 
 <h3 id="enabling_v3_api">Enabling the Drive v3 API</h3>
-Before we can automate the upload process, we must enable the Google Drive v3 API and in the process aquire the two files `credentials.json` and `token.pickle`. Those files are needed by the `drive_upload.py` script to authenticate the connected Google account using the <a href="https://developers.google.com/drive/api/v3/about-auth" target="_blank">OAuth v2</a>. 
+Before we can automate the upload process, we must enable the Google Drive v3 API and in the process aquire the two files `credentials.json` and `token.pickle`. Those files are needed by the `drive_upload.py` script to authenticate the connected Google account using the <a href="https://developers.google.com/drive/api/v3/about-auth" target="_blank">OAuth v2</a>.
 
 <h4 id="acquire_credentials">Aquiring credentials.json file</h4>
 Enabling the drive api (under step one) on <a href="https://developers.google.com/drive/api/v3/quickstart/python" target="_blank">this page</a>, will download the file `credentials.json`. For now you can save this file wherever, but make sure to set the path in the `config.yaml` at `credtials_path: /path/to/credentials.json` yaml, so that the `drive_upload.py` script will know where the file is located. Once that is done, we can finally obtain the token.pickle file, which is the last piece that is still missing.
 
 <h4 id="acquire_token">Acquiring token.pickle file</h4>
-Even though I am not very happy about, the last step required you to have a desktop environment with a working browser. I am not sure why Google made it this way, but I assume that they want that you can only directly, in an interactive manner give a script or app access to your drive storage. 
+Even though I am not very happy about, the last step required you to have a desktop environment with a working browser. I am not sure why Google made it this way, but I assume that they want that you can only directly, in an interactive manner give a script or app access to your drive storage.
 
-Given that you have set the path to the `credentials.yaml` file in the `config.yaml` file, execute the `drive_upload.py` script: 
+Given that you have set the path to the `credentials.yaml` file in the `config.yaml` file, execute the `drive_upload.py` script:
 ```
 cd postgres_googledrive_backup
 python drive_upload.py -cf /path/to/config.yaml
@@ -66,7 +69,7 @@ This will your default browser and ask you to allow "Quickstart" access to that 
 <img src="/assets/img/oauthv2.jpg" class="google_auth_process_pic">
 <img src="/assets/img/oauthconfirm.jpg" class="google_auth_process_pic">
 
-If everything worked, this will create the file `token.pickle` in your current working directory and output `Token file has been acquired, exiting...` to your console. Make sure to adjust to the path of the `token.pickle` file in the `config.yaml` file, so that `drive_upload.py` finds the token, independt of your working directory. 
+If everything worked, this will create the file `token.pickle` in your current working directory and output `Token file has been acquired, exiting...` to your console. Make sure to adjust to the path of the `token.pickle` file in the `config.yaml` file, so that `drive_upload.py` finds the token, independt of your working directory.
 
 And that's it. You could now manually run both scripts manually and it would upload the .sql dumbs into the google drive folder set in the `config.file`. But we are developers, there is no fun in doing things manually. So let's automate the entire workflow using the crontab in the next and final section of this post.  
 
@@ -89,9 +92,9 @@ crontab -e
 55 23 * * * /home/pcadmin/backup_venv/bin/python3 /home/pcadmin/automatic_backup/drive_upload.py -cf /home/pcadmin/automatic_backup/config.yaml >> /tmp/backup.log
 ```
 
-If you wish to run the backup process daily at a given specific time, the cron prefix is `23 50 * * *` for every day at 23:50. Take a look at the crontab.md file, which is pretty close to what I am running on my linux server. Both scripts except one paramaeter, which is the path to the `config.yaml` file. So make sure to adjust that path and also make sure that the paths in the `config.yaml` are also correct. 
+If you wish to run the backup process daily at a given specific time, the cron prefix is `23 50 * * *` for every day at 23:50. Take a look at the crontab.md file, which is pretty close to what I am running on my linux server. Both scripts except one paramaeter, which is the path to the `config.yaml` file. So make sure to adjust that path and also make sure that the paths in the `config.yaml` are also correct.
 
-When working the crontab, environment variables are not set, meaning that something `python example.py` won't work, instead you need to use absolute paths: `/usr/bin/python example.py`. 
+When working the crontab, environment variables are not set, meaning that something `python example.py` won't work, instead you need to use absolute paths: `/usr/bin/python example.py`.
 
 
 Further, we need to make sure that postgres user, who will execute the commands in the postgres crontab, has read, write and execute permissions at the directory containing our scripts, so run the following commands:
@@ -99,6 +102,6 @@ Further, we need to make sure that postgres user, who will execute the commands 
 sudo chown postgres postgres_googledrive_backup
 sudo chmod 700 postgres_googledrive_backup
 ```
-This makes the postgres user the owner of that directory and gives only the owner read write and execute permisions. 
+This makes the postgres user the owner of that directory and gives only the owner read write and execute permisions.
 
-And that's it. You can now, at an arbitrary interval create backups of a postgres database table (or anything else if you adapt the backuo generating script) and upload those backups into a GoogleDrive cloud folder. Working with the crontab for the first time can be a bit cimbersome, because commands that work in your shell don't necisarly work in the crontab. Make sure that all paths are correct, the user whose crontab you are using (here the postgres user) has sufficient permissions on those folders, 
+And that's it. You can now, at an arbitrary interval create backups of a postgres database table (or anything else if you adapt the backuo generating script) and upload those backups into a GoogleDrive cloud folder. Working with the crontab for the first time can be a bit cimbersome, because commands that work in your shell don't necisarly work in the crontab. Make sure that all paths are correct, the user whose crontab you are using (here the postgres user) has sufficient permissions on those folders,

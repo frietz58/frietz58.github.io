@@ -60,6 +60,22 @@ html {
     margin-left: 0px !important;
 }
 
+.home-headings {
+  text-align: center;
+}
+
+.bar_quote {
+  padding: 0.5625rem 1.25rem 0 1.1875rem;
+  border-left: 1px solid #DDDDDD;
+  margin: 0 0 1.25rem;
+}
+
+.next-to-author {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 // index author image and text positioning
 // adapted from here: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 .home-author-text-wrapper {
@@ -72,16 +88,6 @@ html {
 .home-author-text-wrapper > * {
   padding: 10px;
   flex: 1 100%;
-}
-
-.home-headings {
-  text-align: center;
-}
-
-.next-to-author {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .home-flex-footer {
