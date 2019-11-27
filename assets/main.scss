@@ -13,6 +13,14 @@
     padding-bottom: 15px;
 }
 
+.author-pic-home {
+    border-radius: 50%;
+    width: 200px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
 .google_auth_process_pic {
     width: 50%;
     float: left;
@@ -44,10 +52,50 @@
     margin-bottom: 15px;
 }
 
-html { 
-    scroll-behavior: smooth; 
+html {
+    scroll-behavior: smooth;
 }
 
 .no-margin-left {
-    margin-left: 0px !important; 
+    margin-left: 0px !important;
+}
+
+// index author image and text positioning
+// adapted from here: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+.home-author-text-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: left;
+  padding-bottom: 2em;
+}
+
+.home-author-text-wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.home-headings {
+  text-align: center;
+}
+
+.next-to-author {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.home-flex-footer {
+  padding-bottom: 2em;
+}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .aside-1 { order: 1; }
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
 }
