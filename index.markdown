@@ -6,7 +6,7 @@ layout: home
 ---
 
 <div class="home-author-text-wrapper">
-  <header class="home-intro-header"><h1>Let me introduce myself...</h1></header>
+  <header class="home-intro-header"><h1 class="home-headings">Let me introduce myself...</h1></header>
   <!-- The text next to the image-->
   <article class="main">
     <p class="next-to-author"> Hey, I am Finn. Currently, I'm working on getting my Master's Degree in Computer Science at the University of Hamburg, Germany. I've got a Bachelor in Human-Computer Interaction, which is an interdisciplinary study path, seeking to combine cognitive principals from Psychology with Computer Science. </p>
