@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -21,10 +21,10 @@
 title: A CS students notebook
 email: 5rietz@informatik.uni-hamburg.de
 author: Finn Rietz
-description: >- # this means to ignore newlines until "baseurl:"
+footer_text: >- # this means to ignore newlines until "baseurl:"
   You've found my blog, awesome! Here I write about topics like  Machine Learning,
   Artificial Intelligence, Linux Sysadmin tasks or advanced Python programming.
-  Go brew a coffee ☕ and have fun exploring my blog ;)  
+  Go brew a coffee ☕ and have fun exploring my blog ;)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.compsci.blog" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
