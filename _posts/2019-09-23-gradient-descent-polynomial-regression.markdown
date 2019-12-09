@@ -5,12 +5,13 @@ date:   2019-09-23 21:57:43 +0200
 categories: [Python, Machine Learning]
 summary: "Learn how to implement the Gradient Descent Algorithm on a Polynomial Regression example."
 mathjax: true
+published: false
 ---
 
 <h2 id="polynomial_regression">Polynomial Regression</h2>
 
 $$ y = \theta_0 + \theta_1 x + \theta_2 x^2 + \theta_3 x^3 $$
-Does this work? $$\psi\ \epsilon\ \epsilon\ \tau$$. 
+Does this work? $$\psi\ \epsilon\ \epsilon\ \tau$$.
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 Jekyll requires blog post files to be named according to the following format:
