@@ -17,7 +17,7 @@
         </label>
 
         <div class="trigger">
-          <!--
+          <!-- dynamically create links in the header for all pages that are in site.pages
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title -%}
@@ -26,11 +26,24 @@
           {%- endfor -%}
           -->
 
+          <!-- Have one link for blog and one for categories-->
           <a class="page-link no-margin-left" href="/posts/">Blog</a>
           <a class="page-link no-margin-left" href="/categories/">Categories</a>
+
+
+          <!-- Instead use dropdown menu for blog > categories
+          <div class="dropdown">
+            <span><a class="page-link no-margin-left" href="/posts/">Blog</a></span>
+              <div class="dropdown-content">
+                <a class="page-link no-margin-left" href="/categories/">Categories</a>
+              </div>
+          </div>
+          -->
+
           <!--  hide about me page link, don't need that anymore
           <a class="page-link no-margin-left" href="/about/">About me</a>
           -->
+
         </div>
       </nav>
     {%- endif -%}

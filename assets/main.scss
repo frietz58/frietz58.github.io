@@ -3,6 +3,7 @@
 ---
 
 @import "{{ site.theme }}";
+
 .author-pic {
     border-radius: 50%;
     width: 200px;
@@ -76,6 +77,7 @@ html {
   transform: translateY(-50%);
 }
 
+//##====================== <Home pic-text layout> ======================##
 // index author image and text positioning
 // adapted from here: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 .home-author-text-wrapper {
@@ -105,3 +107,25 @@ html {
   .aside-2 { order: 3; }
   .footer  { order: 4; }
 }
+//##====================== </Home pic-text layout> ======================##
+
+//##====================== <dropdown menu> ======================##
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+//##====================== </dropdown menu> ======================##
