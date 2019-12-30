@@ -1,10 +1,18 @@
 ---
-layout: post
-title:  "Automatically backup any Postgres database table into a GoogleDrive"
-date:   2019-09-23 21:57:43 +0200
-categories: [Linux, Python]
+title: "Automatically backup any Postgres database table into a GoogleDrive"
+last_modified_at: 2019-09-23 21:57:43 +0200
+categories:
+  - Python
+  - Linux
+tags:
+  - Python
+  - Linux
+  - Crontab
+  - GoogleDrive API
+mathjax: true
+published: true
+toc: true
 summary: "Learn how you can backup any Postgress database table into a GoogleDrive folder using two small scripts and the crontab."
-
 ---
 
 In this post I will explain how to automate the process of backuping a postgres database table into a GoogleDrive cloud storage location. In my approach, we use two scripts to accomplish this: One script to produce the backup files and a second script that takes care of the uploading process.

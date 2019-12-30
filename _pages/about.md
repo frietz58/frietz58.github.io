@@ -1,11 +1,7 @@
 ---
-layout: page
-title: About
 permalink: /about/
-published: false # link is set commented in includes/header.html
+title: "About"
 ---
-
-<img src="/assets/img/me.jpg" class="author-pic">
 
 <p> Hey, I am Finn. Currently, I'm working on getting my Master's Degree in Computer Science at the University of Hamburg, Germany. I've got a Bachelor in Human-Computer Interaction, which is an interdisciplinary study path, seeking to combine cognitive principals from Psychology with Computer Science. </p>
 <p> Though, during the three years of completing that degree, I've developed a greater interest in other areas of Computer Science, mainly in the field of Artificial Intelligence and Data Science. </p>

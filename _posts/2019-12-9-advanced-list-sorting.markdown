@@ -1,11 +1,16 @@
 ---
-layout: post
-title:  "Decorate-Sort-Undecorate: Advanced list sorting in Python"
-date:   2019-12-9 20:56:11 +0200
-categories: [Python]
-summary: "Understand the 'Decorate-Sort-Undecorate' idiom for advanced sorting control. Or: How to sort two lists by the order of a third."
+title: "Decorate-Sort-Undecorate: Advanced list sorting in Python"
+last_modified_at: 2016-03-09T16:20:02-05:00
+categories:
+  - Python
+tags:
+  - Python
+  - Matplotlib
+  - Sorting
 mathjax: true
 published: true
+toc: true
+summary: "Understand the 'Decorate-Sort-Undecorate' idiom for advanced sorting control. Or: How to sort two lists by the order of a third."
 ---
 
 <h2 id="motivation">Motivation and use case</h2>
