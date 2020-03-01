@@ -1,0 +1,52 @@
+---
+layout: single
+author_profile: true
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  overlay_image: /assets/img/forest.jpg
+  caption: "<a href='https://unsplash.com/photos/-heLWtuAN3c' target='_blank'>Photo by Sergei Akulich on Unsplash</a>"
+---
+
+<h1>About me</h1>
+Hey, I am Finn. Currently, I'm working on getting my Master's Degree in Computer Science at the University of Hamburg, Germany. 
+I've got a Bachelor in Human-Computer Interaction, which is an interdisciplinary study path, seeking to combine cognitive principals 
+from Psychology with Computer Science.
+<br><br>
+Though, during the three years of completing that degree, I've developed a greater interest in other areas of Computer Science, 
+mainly in the field of Artificial Intelligence, Robotics and Data Science, which leads me to this website.
+<br><br>
+
+
+<h1>About this site</h1>
+You can expect the majority of issues here to be related to Machine Learning, Artificial Intelligence, advanced Python programming, 
+and Linux Sysadmin tools. There are multiple reasons for me to write about a topic: I will write about a topic when I feel like there is a 
+non-trivial problem at hand, for which I couldn't quickly find a solution online. However, give that I learn about topics that I find
+highly exciting on almost a weekly basis, I might just write about something because I personally enjoy the topic. 
+<br><br>
+I have read many great blogs and tutorials, but also some that didn't delight me as much. I try to build upon that, contribute to the 
+community, and fill gaps where I experience a lack of material and documentation. However, you might also find me writing about 
+topics that are already well covered (like the different versions and implementations of the Gradient Descent Algorithm), in which 
+case I simply wanted to take my spin on the topic ;)
+<br><br>
+
+If at the end of the day, a handful of people found something useful on this blog, I am happy and would see this as an absolute win. 
+<br><br>
+
+Yours, 
+<i>Finn Rietz.</i>
+
+<br><br><br><br>
+
+<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+{% for post in posts limit:3%}
+  {% include archive-single.html %}
+{% endfor %}
+
