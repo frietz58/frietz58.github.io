@@ -10,6 +10,7 @@ tags:
 mathjax: true
 published: true
 toc: true
+toc_sticky: true
 teaser: "Understand the 'Decorate-Sort-Undecorate' idiom for advanced sorting in python"
 ---
 
@@ -115,7 +116,7 @@ The legend looks much better! The entries in the legend are sorted in an ascendi
 <h2 id="idiom">The 'Decorate-Sort-Undecorate' idiom</h2>
 So what is this mysterious 'Decorate-Sort-Undecorate' idiom, which is dominantly mentioned in the title of this post but has only been used *implicitly* and without great explanation? The <a href="https://wiki.python.org/moin/HowTo/Sorting#The_Old_Way_Using_Decorate-Sort-Undecorate" target="_blank">Decorate-Sort-Undecorate</a>, also known as the <a href="https://en.wikipedia.org/wiki/Schwartzian_transform" target="_blank">Schwartzian transform</a> is a technique for
 <blockquote>
-...comparison-based sorting when the ordering is actually based on the ordering of a certain property (the key) of the elements... -- <cite><a href="https://en.wikipedia.org/wiki/Schwartzian_transform" target="_blank">wikipedia</a></cite>
+...comparison-based sorting when the ordering is actually based on the ordering of a certain property (the key) of the elements... <cite><a href="https://en.wikipedia.org/wiki/Schwartzian_transform" target="_blank">wikipedia</a></cite>
 </blockquote>
 and has been around since 1994. The idiom gets its name from the three main steps:
   1. Create a list (decorate an existing list) with specific values, whose purpose is to control the sorting behavior.

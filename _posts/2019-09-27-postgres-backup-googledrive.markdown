@@ -12,11 +12,18 @@ tags:
 mathjax: true
 published: true
 toc: true
+toc_sticky: true
 teaser: "Learn how you can backup any Postgress database table into a GoogleDrive folder using two small scripts and the crontab."
 ---
 
-In this post I will explain how to automate the process of backuping a postgres database table into a GoogleDrive cloud storage location. In my approach, we use two scripts to accomplish this: One script to produce the backup files and a second script that takes care of the uploading process.
-Note that it should be trivial to adapt this solution to automatically backup anything else into the cloud, simply change the shell script that, in this case, generate the .sql dumps of the desired postgres database table.
+<h2 id="motivation">Motivation and use case</h2>
+
+In this post I will explain how to automate the process of backuping a postgres database table into a GoogleDrive cloud storage location. 
+I encoutered this problem when helping my dad out with some IT related problem, which included the backup process of a Postgress SQL database table. 
+The solution I provide here can, however, easily be adapted to backup <i>whatever</i> and upload it into some GoogleDrive folder. 
+
+In my approach, we use two scripts to accomplish this: One script to produce the backup files and a second script that takes care of the uploading process.
+If you wish to upload something else, simply adapt the shell script which, in this case, generate the .sql dumps of the desired postgres database table.
 
 For now, clone the repository and we are good to go:
 ```
@@ -31,7 +38,7 @@ Note that <span class="text-highlight-red">**the installation process requires a
 <h2 id="dumping_postgres_table">Dumping a postgres table</h2>
 First, we will take a look at how we can backup a postgres database table (If you wish to backup something else, you should start here). For this, we use the command `pg_dump [dbname]`, which can create script or archive dumps of any given database. I've chosen to use script dumps which are
 <blockquote>
-<p>"plain-text files containing the SQL commands required to reconstruct the database to the state it was in at the time it was saved." -- <cite><a href="https://www.postgresql.org/docs/9.3/app-pgdump.html" target="_blank">postgres documentation</a></cite></p>
+<p>"plain-text files containing the SQL commands required to reconstruct the database to the state it was in at the time it was saved." <cite><a href="https://www.postgresql.org/docs/9.3/app-pgdump.html" target="_blank">postgres documentation</a></cite></p>
 </blockquote>
 
 Specifically, in the cron_backup.sh script, the line that produces the .sql dumb file is:
