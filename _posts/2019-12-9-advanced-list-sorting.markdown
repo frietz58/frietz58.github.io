@@ -1,6 +1,6 @@
 ---
 title: "Decorate-Sort-Undecorate: Advanced list sorting in Python"
-last_modified_at: 2016-03-09T16:20:02-05:00
+last_modified_at: 2019-12-9 23:07:42 +0200
 categories:
   - Python
 tags:
