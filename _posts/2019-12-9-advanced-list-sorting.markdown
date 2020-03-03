@@ -11,7 +11,7 @@ mathjax: true
 published: true
 toc: true
 toc_sticky: true
-teaser: "Understand the 'Decorate-Sort-Undecorate' idiom for advanced sorting in python"
+teaser: "Understand the 'Decorate-Sort-Undecorate' idiom for advanced sorting in python."
 ---
 
 <h2 id="motivation">Motivation and use case</h2>
@@ -50,7 +50,6 @@ plt.show()
 ```
 
 This code produces the following plot:
-Simple
 <img src="/assets/img/advanced-list-sorting/unsorted_plot_bright.png">
 
 Pay close attention to the legend! There appears to be no ordering of the legend entries. We can observe that each item in the plot (the four lines) is identified by it's linestyle and has a describing text, indicating a performance measure. These are the two lists that I mentioned earlier: The legend handles are the linestyle elements, and the labels are the pieces of text describing each item in the plot.

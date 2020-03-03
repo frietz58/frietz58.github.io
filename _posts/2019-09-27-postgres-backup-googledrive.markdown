@@ -13,7 +13,7 @@ mathjax: true
 published: true
 toc: true
 toc_sticky: true
-teaser: "Learn how you can backup any Postgress database table into a GoogleDrive folder using two small scripts and the crontab"
+teaser: "Learn how you can backup any Postgress database table into a GoogleDrive folder using two small scripts and the crontab."
 ---
 
 <h2 id="motivation">Motivation and use case</h2>
