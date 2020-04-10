@@ -5,7 +5,7 @@ teaser: >-
   My bachelor Thesis: Scale estimation for online Visual Object Tracking based
   on convolutional features.
 header:
-  teaser: /assets/img/hiob_project/dsst.png
+  teaser: /assets/img/hiob_project/dsst.jpg
 sidebar:
   - title: Learnings
     text: >-
