@@ -1,6 +1,7 @@
 ---
 title: Convolutional features for visual scale estimation
 published: true
+toc: true
 teaser: >-
   My bachelor Thesis: Scale estimation for online Visual Object Tracking based
   on convolutional features.
@@ -61,6 +62,8 @@ Finally, once good hyperparameter configurations were found for both algorithms,
 
 This concludes the very brief write-up of my Bachelor Thesis project. Check out some exemplary results below or take a look at the [Github-Repo](https://github.com/frietz58/se_hiob){:target="_blank"}, if you feel like it :)
 
+## Some results
+Without providing an in-depth explanation or analysis, I still want to show some results here, as I find them really exciting. Feel free to check out [the addendum to my thesis](/assets/img/hiob_project/FinnRietzBscThesisAddendum.pdf){:target="_blank"}, where these results originate from and are explained accordingly.
 {% include gallery caption="Some results for the really curious reader :)" %}
 
 References:<br>
