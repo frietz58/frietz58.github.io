@@ -1,7 +1,7 @@
 ---
 title: Convolutional features for visual scale estimation
 published: true
-toc: true
+toc: false
 teaser: >-
   My bachelor Thesis: Scale estimation for online Visual Object Tracking based
   on convolutional features.
@@ -26,10 +26,10 @@ gallery:
     image_path: /assets/img/hiob_project/Twinnings.png
     alt: Example size graph
 ---
-
-## Introduction
-
-For all my projects, I provide a brief write-up of what the purpose of the project is, what I learned when working on the project and what the key outcome is. Contrary to the blog-posts, the goal behind these write-ups is not to fully explain the implementation or principle, but rather to illustrate a bit of my skill-set. Thus, this project is dedicated to the work of my Bachelor Thesis.
+<br>
+This projects demonstrates mainly the work of my bachelor thesis. However, after
+submitting my thesis, I had the opportunity to keep on working on the topic, which
+produced the final results presented below.  
 
 ## My Bachelor Thesis topic
 
