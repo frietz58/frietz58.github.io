@@ -74,9 +74,12 @@ Here, we can clearly see an increase in activity around the 230th time step. If 
 ## Final verdict
 Animating temporal data can reduce the complexity of plots and make them easier to understand, at the cost of losing some of the compactness of having the entire time series displayed in one frame. Matplotlib's animation class provides a convenient way for anyone with basic Python understanding to create scientific animations, similar to those presented here. However, larger and more complex animations do take quite a while to render...
 <br>
+As always, find the code associated with this project [on my Github](https://github.com/frietz58/mpl_neural_activity){:target="_blank"}
+<br>
 
 References:<br>
 [[1] Knowledge Technology Research Group](https://www.inf.uni-hamburg.de/en/inst/ab/wtm/){:target="_blank"}<br>
 [[2] Adaptive and Variational Continuous Time Recurrent Neural Networks](https://www.researchgate.net/publication/327691059_Adaptive_and_Variational_Continuous_Time_Recurrent_Neural_Networks){:id="avctrnn_citation" target="_blank"}<br>
 [[3] Matplotlib Animation API](https://matplotlib.org/3.2.1/api/animation_api.html){:target:"_blank"}<br>
-[[4] Easing Animations with Python](https://www.rossidata.com/PythonAnimations){:target:"_blank"}
+[[4] Easing Animations with Python](https://www.rossidata.com/PythonAnimations){:target:"_blank"}<br>
+[[5] Code for this project](https://github.com/frietz58/mpl_neural_activity){:target="_blank"}<br>
