@@ -16,7 +16,7 @@ teaser: "Understand the 'Decorate-Sort-Undecorate' idiom for advanced sorting in
 
 <h2 id="motivation">Motivation and use case</h2>
 
-The other day, I found myself generating a complex performance graph using <a href="https://matplotlib.org/" target="_blank">matplotlib</a>. I wanted to rearrange the order of the item in the <a href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.legend.html" target="_blank">legend</a>. There are multiple ways we could tackle this problem: We could, for example, manipulate the order in which the items are plotted since this effects the order in which the legend data is generated. The, in my opinion, much more elegant way is to directly manipulate the order of the items in matplotlib's legend. Since the legend consists of two lists (<a href="https://matplotlib.org/3.1.1/api/legend_api.htSimpleml#matplotlib.legend.Legend" target="_blank">a list of handles and a list of labels</a>), I needed a solution for sorting **both** lists.
+The other day, I found myself generating a complex performance graph using <a href="https://matplotlib.org/" target="_blank">matplotlib</a>. I wanted to rearrange the order of the item in the <a href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.legend.html" target="_blank">legend</a>. There are multiple ways we could tackle this problem: We could, for example, manipulate the order in which the items are plotted since this effects the order in which the legend data is generated. The, in my opinion, much more elegant way is to directly manipulate the order of the items in matplotlib's legend. Since the legend consists of two lists (<a href="https://matplotlib.org/3.1.1/api/legend_api.html#matplotlib.legend.Legend" target="_blank">a list of handles and a list of labels</a>), I needed a solution for sorting **both** lists.
 
 <br>
 <h2 id="simple">Simple example: Sorting two lists in the same manner</h2>
@@ -32,7 +32,7 @@ import matplotlib
 matplotlib.rcParams.update({'font.size': 14})
 
 # init figurebare
-fig, ax = plt.subplots(1,1, figsize=(10,7))Simple
+fig, ax = plt.subplots(1,1, figsize=(10,7))
 
 # generate artificial data
 line_a = np.linspace(100, 0, 85)
