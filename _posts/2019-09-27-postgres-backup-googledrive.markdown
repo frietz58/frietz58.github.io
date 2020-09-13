@@ -79,7 +79,7 @@ cd postgres_googledrive_backup
 python drive_upload.py -cf /path/to/config.yaml
 ```
 
-This will your default browser and ask you to allow "Quickstart" access to that Google accounts drive storage:
+This will open your default browser and ask you to allow "Quickstart" access to that Google accounts drive storage:
 
 <img src="/assets/img/oauthv2.jpg" class="google_auth_process_pic">
 <img src="/assets/img/oauthconfirm.jpg" class="google_auth_process_pic">
