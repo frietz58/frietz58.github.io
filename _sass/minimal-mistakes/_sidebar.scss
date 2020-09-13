@@ -57,7 +57,8 @@
   p,
   li {
     font-family: $sans-serif;
-    font-size: $type-size-6;
+    /*font-size: $type-size-6; I'm overwriting this manually*/
+    font-size: 0.9em;
     line-height: 1.5;
   }
 
