@@ -1,6 +1,8 @@
 ---
 title: Multimanual Interaction on a 3D Fitt's Law Task
 published: true
+author_profile: true
+
 teaser: Using an Oculus Rift alongside a Leap Motion, we investigated interaction techniques for virtual hands.
 excerpt: Test excerpt
 header:

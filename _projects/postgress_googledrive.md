@@ -1,26 +1,16 @@
 ---
 title: "Postgres GoogleDrive backups"
 published: true
+author_profile: true
 teaser: >-
   Automatic backuping of an postgres database table using the crontab and Python and the GoogleDrive-API.
 header:
-  # image: /assets/img/forest.jpg
   teaser: /assets/img/postgres_googledrive/teaser.png
 sidebar:
   - title: Learnings
     text: >-
       &#8226; It is very cute<br>&#8226; Fluff<br>&#8226;
       <b>LOOK AT IT</b><br>&#8226; I want ont :3
-#gallery:
-#  - url: /assets/img/forest.jpg
-#    image_path: /assets/img/forest.jpg
-#    alt: "placeholder image 1"
-#  - url: /assets/img/forest.jpg
-#    image_path: /assets/img/forest.jpg
-#    alt: "placeholder image 2"
-#  - url: /assets/img/forest.jpg
-#    image_path: /assets/img/forest.jpg
-#    alt: "placeholder image 3"
 ---
 Project details comming soon, for now, please consider this kitten:
 <img src="/assets/img/cat.jpg" />

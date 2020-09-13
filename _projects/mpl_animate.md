@@ -1,6 +1,8 @@
 ---
 title: "Neural activity animated visualization"
 published: true
+author_profile: true
+
 teaser: >-
   Animated visualization of neural activity in different neural networks, made with Python.
 header:
