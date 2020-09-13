@@ -119,4 +119,7 @@ sudo chmod 700 postgres_googledrive_backup
 ```
 This makes the postgres user the owner of that directory and gives only the owner read write and execute permisions.
 
-And that's it. You can now, at an arbitrary interval create backups of a postgres database table (or anything else if you adapt the backuo generating script) and upload those backups into a GoogleDrive cloud folder. Working with the crontab for the first time can be a bit cimbersome, because commands that work in your shell don't necisarly work in the crontab. Make sure that all paths are correct, the user whose crontab you are using (here the postgres user) has sufficient permissions on those folders,
+And that's it. You can now, at an arbitrary interval, create backups of a postgres database table (or anything else if you adapt the backup generating script) and upload those backups into a GoogleDrive cloud folder. Working with the crontab for the first time can be a bit cumbersome, because commands that work in your shell don't necisarly work in the crontab. Make sure that all paths are correct and the user whose crontab you are using (here the postgres user) has sufficient permissions on the folder its operating on, and you should be good to go.
+
+Cheers,<br>
+Finn.
