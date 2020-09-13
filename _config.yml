@@ -108,7 +108,7 @@ analytics:
 # Site Author
 author:
   name             : "Finn Rietz"
-  avatar           : "/assets/img/me.jpg"
+  avatar           : "/assets/img/me1.jpg"
   bio              : "Bio-inspired Artifcial Intelligence, Intelligent robotics, Data Science. <span style='white-space: nowrap;'>❤️🐍.</span>"
   location         : "Hamburg, Germany"
   email            : "5rietz@informatik.uni-hamburg.de"
