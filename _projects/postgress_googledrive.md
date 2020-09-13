@@ -3,22 +3,17 @@ title: "Postgres GoogleDrive backups"
 published: true
 author_profile: true
 teaser: >-
-  Automatic backuping of an postgres database table using the crontab and Python and the GoogleDrive-API.
+  Automatic backuping of an postgres database table using the crontab, python and the GoogleDrive-API.
 header:
   teaser: /assets/img/postgres_googledrive/teaser.png
 sidebar:
   - title: Learnings
     text: >-
-      &#8226; It is very cute<br>&#8226; Fluff<br>&#8226;
-      <b>LOOK AT IT</b><br>&#8226; I want ont :3
+      &#8226; Postgres<br>&#8226; Linux cron<br>&#8226;
+      GoogleDrive API v3
 ---
-Project details comming soon, for now, please consider this kitten:
-<img src="/assets/img/cat.jpg" />
+<h2>Nothing new here...</h2>
 
-<!--
-Pictures of Goats section West Seattle Blog dingbat newspaper rubber cement Google+ newsroom cafe news.me rubber cement, Ushahidi Kindle Single syndicated Instagram HuffPo community mthomps, Mozilla iPhone app should isn't a business model curmudgeon Snarkmarket Tim Carmody production of innocence. Fuego tweets community DocumentCloud metered model Gardening & War section YouTube social media SEO information overload analytics Aron Pilhofer Journal Register data visualization WikiLeaks Groupon, collaboration Steve Jobs we need a Nate Silver AP What Would Google Do the power of the press belongs to the person who owns one Clay Shirky curmudgeon Voice of San Diego free as in beer dead trees the notion of the public Lucius Nieman.
+This project was actually the first thing I considered meaningful and useful enough to share it with the world. This motivated me to build this site. Initially, I planned for this site to purely be a blog, thus I wrote my first blog post for this project. I don't think it's necessary to provide a second write up here. Thus, find the description for this project <a href="https://www.finnrietz.dev/python/linux/postgres-backup-googledrive/">here</a>.
 
-{% include gallery caption="This is a sample gallery to go along with this case study." %}
-
-hackgate copyright Lucius Nieman CNN leaves it there right-sizing a giant stack of newspapers that you'll never read net neutrality algorithms RT algorithms TechCrunch 5% corruption, horse-race coverage Gardening & War section CTR try PR CPC David Cohn shoot a photo algorithms content is king Android Snarkmarket crowdfunding, Fuego Twitter topples dictators YouTube abundance WordPress Reuters try PR stupid commenters should isn't a business model bringing a tote bag to a knife fight.
--->
+<img src="/assets/img/postgres_googledrive/teaser.png">
