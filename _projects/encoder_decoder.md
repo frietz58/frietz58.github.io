@@ -1,11 +1,11 @@
 ---
-title: "Reinforcement learning analysis"
+title: "Encoder/Decoder for saliency prediction"
 published: true
 teaser: >-
-  Analysis of deep reinforcement learning algorithms on the BipedalWalker-v2 OpenAI Gym environment.
+    Prediction of salient image regions with an Encder/Decoder CNN architecture
 header:
   # image: /assets/img/forest.jpg
-  teaser: /assets/img/rl_sac_analysis/walker.gif
+  teaser: /assets/img/encoder_decoder/teaser_0.png
 sidebar:
   - title: Learnings
     text: >-
