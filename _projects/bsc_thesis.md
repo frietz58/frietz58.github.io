@@ -7,7 +7,7 @@ teaser: >-
   My bachelor Thesis: Scale estimation for online Visual Object Tracking based
   on convolutional features.
 header:
-  teaser: /assets/img/hiob_project/dsst.jpg
+  teaser: /assets/img/hiob_project/hiob_teaser.png
 sidebar:
   - title: Learnings
     text: >-
@@ -47,16 +47,18 @@ For my Bachelor Thesis, titled "Scale Estimation in Visual Object Tracking" (dow
 
 After extensive literature research, I identified the most promising approach that was compatible with the HIOB tracker to be the Discriminative Scale Space Tracking paper <a href="#dsst_paper_citation">[4]</a, where a scale filter is trained and updated based on multiple image patches, sampled on multiple scale resolution.
 
-<img class="align-left" src="/assets/img/hiob_project/dsst_sample.png" />
-<figcaption>Illustration of the DSST scale sample. Image taken from <a href="#dsst_paper_citation">[4]</a>.</figcaption>
-
+<div>
+  <img class="align-left" src="/assets/img/hiob_project/dsst_sample.png" />
+  <figcaption>Illustration of the DSST scale sample. Image taken from <a href="#dsst_paper_citation">[4]</a>.</figcaption>
+</div>
 At each time step, the scale of the objected is estimated, based on a [Histogram of oriented gradients](https://de.wikipedia.org/wiki/Histogram_of_oriented_gradients){:target="_blank"}-representation (HOG) of the scaled image patches. Since this is a very generic approach to the problem, which is independent of the implementational details of the main tracker, it was relatively straight-forward to implement the scale pyramid together with the HOG representation and integrate both into HIOBs main pipeline. This alone allowed for an online updating of the scale of the object during tracking.
 
 However, instead of stopping at this point, my thesis supervisor [Dr. Heinrich](https://www.inf.uni-hamburg.de/en/inst/ab/wtm/people/heinrich.html){:target="_blank"} advised me to implement a second approach, with the idea of estimating the scale based on convolutional features directly, without the need for a dedicated scale representation. Thus, I developed an algorithm that estimates the scale of the target object during tracking. Without going into detail, the key idea is that all convolutional features (that belongs to the object) are detected with a certain confidence and that the totality of all feature confidences can be evaluated, reflecting the scale of the object (for an in-depth explanation, see my [Bachelor Thesis PDF](/assets/img/hiob_project/FinnRietzBscThesis.pdf){:target="_blank"}).
 
-<img class="align-right" src="/assets/img/hiob_project/heatmap.png" style="width:400px"/>
-<figcaption>Visualisation of some results from the hyperparameter optimization.</figcaption>
-
+<div>
+  <img class="align-left" src="/assets/img/hiob_project/heatmap.png" style="width:400px"/>
+  <figcaption>Visualisation of some results from the hyperparameter optimization.</figcaption>
+</div>
 After implementing both algorithms, we conducted an extensive grid-search hyper-parameter optimization, to determine the ideal configurations for both algorithms. Conducting the optimization was not as straight-forward as I had anticipated it to be. I encountered different problems when running the optimization on different GPU-Servers, ranging from connection-timeouts and certificate-timeouts to weird bugs in my _flawless code_ (irony...), which resulted in me having to repeat the optimizations multiple times. Note, that each optimization had to be done for different modes of both algorithms, while one optimization alone took about 120 hours. However, with tools like TMUX, I was able to resolve most of the server-side issues and by parallelizing the experiments over multiple GPUs, I could reduce the time for the optimization significantly.
 
 Finally, once good hyperparameter configurations were found for both algorithms, we conducted a benchmarking experiment on two different datasets, comparing the performance of both algorithms. These revealed that our novel approach, which estimates the object scale purely based on convolutional features, is significantly better than the DSST algorithm on *one of the two datasets*, while also being orders of magnitude faster, in terms of processed frames by seconds, which were incredibly exciting results! Again, for a more in-depth analysis of these results, I refer to my [actual thesis document](/assets/img/hiob_project/FinnRietzBscThesis.pdf){:target="_blank"} and this [follow-up document](/assets/img/hiob_project/FinnRietzBscThesisAddendum.pdf){:target="_blank"}, containing more recent and polished results. However, while the convolutional features appear to work very well and very robustly for most sequences, we identified that occlusion of the object is particularly challenging to adapt to, which makes sense for an online trained model.
