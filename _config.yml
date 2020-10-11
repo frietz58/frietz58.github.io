@@ -131,6 +131,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+    - label: "KT Research Group"
+      icon: "fas fa-fw fa-briefcase"
+      url: "https://www.inf.uni-hamburg.de/en/inst/ab/wtm/"
 
 # Site Footer
 footer:
