@@ -16,8 +16,8 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "A CS students notebook"
-title_separator          : "-"
+title                    : "Finn Rietz.dev"
+title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Finn Rietz"
 description              : "Finn Rietz personal website. Blog and projects showcase. Topics I encountered during my studies that I find particularly interesting."
@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "Finn Rietz"
   avatar           : "/assets/img/me1.jpg"
-  bio              : "Bio-inspired Artifcial Intelligence, Intelligent robotics, Data Science. <span style='white-space: nowrap;'>❤️🐍.</span>"
+  bio              : "Bio-inspired Artifcial Intelligence, Intelligent robotics, Reinforcement Learning. <span style='white-space: nowrap;'>❤️🐍.</span>"
   location         : "Hamburg, Germany"
   email            : "5rietz@informatik.uni-hamburg.de"
   links:
