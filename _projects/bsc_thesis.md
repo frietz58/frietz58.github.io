@@ -1,7 +1,8 @@
 ---
 title: Convolutional features for visual scale estimation
 published: true
-toc: false
+toc: true
+toc_sticky: true
 author_profile: true
 teaser: >-
   My bachelor Thesis: Scale estimation for online Visual Object Tracking based
@@ -28,7 +29,7 @@ gallery:
     alt: Example size graph
 ---
 <br>
-This projects demonstrates mainly the work of my bachelor thesis. However, after
+This projects presents mainly the work of my bachelor thesis. However, after
 submitting my thesis, I had the opportunity to keep on working on the topic, which
 produced the final results presented below.  
 
