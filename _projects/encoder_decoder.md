@@ -1,16 +1,17 @@
 ---
 title: "Encoder/Decoder for saliency prediction"
 published: true
+author_profile: true
 teaser: >-
-    Prediction of salient image regions with an Encder/Decoder CNN architecture
+    Prediction of salient image regions with an Encder/Decoder CNN architecture.
 header:
   # image: /assets/img/forest.jpg
   teaser: /assets/img/encoder_decoder/teaser_0.png
 sidebar:
   - title: Learnings
     text: >-
-      &#8226; It is very cute<br>&#8226; Fluff<br>&#8226;
-      <b>LOOK AT IT</b><br>&#8226; I want ont :3
+      &#8226; This<br>&#8226; will be<br>&#8226;
+      <b>updated</b><br>&#8226; soon
 #gallery:
 #  - url: /assets/img/forest.jpg
 #    image_path: /assets/img/forest.jpg
