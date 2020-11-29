@@ -5,7 +5,7 @@ author_profile: true
 teaser: >-
     Coursework for the Interactive Game Development master level course at UHH.
 header:
-  teaser: /assets/unity_game/unity_game.png
+  teaser: "/assets/unity_game/unity_game.PNG"
 sidebar:
   - title: Learnings
     text: >-
