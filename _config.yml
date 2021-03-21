@@ -287,6 +287,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:path/
+  projects2:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -305,6 +308,15 @@ defaults:
   - scope:
       path: ""
       type: projects
+    values:
+      layout: single
+      author_profile: false
+      share: false
+
+  # _projects2
+  - scope:
+      path: ""
+      type: projects2
     values:
       layout: single
       author_profile: false

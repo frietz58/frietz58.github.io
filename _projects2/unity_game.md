@@ -1,12 +1,11 @@
 ---
-title: "WoZ4U: An Open Source Interface for the Pepper robot"
+title: "Unity Strategy Game"
 published: true
 author_profile: true
 teaser: >-
-    Result of visiting the Intelligent Robotics group in Umeå, Sweden: A flexible and powerful interface for Softbanks Pepper robot.
+    Coursework for the Interactive Game Development master level course at UHH.
 header:
-  # image: /assets/img/forest.jpg
-  teaser: /assets/woz4u/thumbnail.png
+  teaser: "/assets/unity_game/unity_game.PNG"
 sidebar:
   - title: Learnings
     text: >-
@@ -24,7 +23,7 @@ sidebar:
 #    alt: "placeholder image 3"
 ---
 
-Project details comming soon, for now, please consider this kitten:
+Project details coming soon, for now, please consider this kitten:
 <img src="/assets/img/cat.jpg" />
 
 <!--

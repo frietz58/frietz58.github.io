@@ -24,7 +24,7 @@ sidebar:
 #    alt: "placeholder image 3"
 ---
 
-Project details comming soon, for now, please consider this kitten:
+Project details coming soon, for now, please consider this kitten:
 <img src="/assets/img/cat.jpg" />
 
 <!--
