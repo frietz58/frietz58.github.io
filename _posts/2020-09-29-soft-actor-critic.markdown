@@ -7,7 +7,7 @@ categories:
 tags:
   - Python
   - Reinforcement Learning
-  - Robotic
+  - Robotics
 mathjax: true
 published: true
 toc: true
