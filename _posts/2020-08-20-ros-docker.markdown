@@ -7,7 +7,7 @@ tags:
   - Linux
   - Docker
   - ROS
-  - VSLAM
+  - SLAM
 mathjax: true
 published: true
 toc: true
