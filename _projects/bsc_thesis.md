@@ -12,7 +12,7 @@ header:
 sidebar:
   - title: Learnings
     text: >-
-      &#8226; So much Python<br>&#8226; Convolutional Neural Networks<br>&#8226;
+      &#8226; Python<br>&#8226; Convolutional Neural Networks<br>&#8226;
       Visual Object Tracking<br>&#8226; Lots of Computer Vision
 gallery:
   - url: /assets/img/hiob_project/success_plots.png
