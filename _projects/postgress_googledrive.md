@@ -1,6 +1,6 @@
 ---
 title: "Postgres GoogleDrive backups"
-published: true
+published: false
 author_profile: true
 teaser: >-
   Automatic backuping of an postgres database table using the crontab, python and the GoogleDrive-API.
