@@ -2,6 +2,8 @@
 title: "Neural activity animated visualization"
 published: true
 author_profile: true
+toc: true
+toc_sticky: true
 
 teaser: >-
   Animated visualization of neural activity in different neural networks, made with Python.
@@ -43,7 +45,7 @@ while maintaining the high amount of readability, typically associated with 2-di
 ## 3D Time series plots
 Without wanting to depict my teachers and colleagues badly (for whom I have nothing but respect), one example for a plot that is relatively cumbersome to read is given here:
 <img class="align-center" src="/assets/img/mpl_animate_project/both-3d-series.png" />
-<figcaption>Hard to read 3D time-series plots. Image adapted from <a href="#avctrnn_citation">[2]</a>.</figcaption>
+<figcaption>Hard to read 3D time-series plots. Image taken from <a href="#avctrnn_citation">[2]</a>.</figcaption>
 
 These plots have not been done by me, but contain some of the data that I was tasked with to find a new, better visualization. All the data-vectors for the for the below animations originate from the same paper, so I encourage the interested reader to check it out [here](https://www.researchgate.net/publication/327691059_Adaptive_and_Variational_Continuous_Time_Recurrent_Neural_Networks){:target="_blank"}. <br>
 Given that the visualization was for a conference, not a follow-up version of the paper, we had the opportunity to experiment with animating the results, which brings the plot back into two dimensions, with time being displayed as actual time frames in the animation. The fact that all plots had a time-component fully enabled this, as animations really only make sense when the data has an underlying temporal component.
