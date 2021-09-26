@@ -9,8 +9,8 @@ header:
 sidebar:
   - title: Learnings
     text: >-
-      &#8226; It is very cute<br>&#8226; Fluff<br>&#8226;
-      <b>LOOK AT IT</b><br>&#8226; I want ont :3
+      &#8226; This<br>&#8226; will be<br>&#8226;
+      <b>updated</b><br>&#8226; soon
 #gallery:
 #  - url: /assets/img/forest.jpg
 #    image_path: /assets/img/forest.jpg
