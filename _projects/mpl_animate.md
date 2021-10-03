@@ -12,7 +12,7 @@ header:
 sidebar:
   - title: Learnings
     text: >-
-      &#8226; Matplotlib animation framework<br>&#8226; Continuous Time Recurrent Neural Networks<br>
+      &#8226; Matplotlib animation framework
 #    image: /assets/img/forest.jpg
 #    image_alt: "logo"
 #    text: "Designer, Front-End Developer"
@@ -71,7 +71,7 @@ Even though in the final version of the second example, this kind of data interp
 ## Situational animations
 While creating animations in Python is incredibly fun, there is one (maybe obvious) drawback to tacking the time component from the third dimension and animating it: It is no longer possible to consider the development or history of the data at one single glance. When the time component is animated, the focus lies heavily on the current frame, and past frames are probably quick to be forgotten. The following image is a good example of where the 3D-visualization (the third dimension is color) nicely reveals a pattern in the underlying data:
 <img class="align-center" src="/assets/img/mpl_animate_project/good-3d-example.png" />
-<figcaption>Example for strong visualization of temporal pattern in time-series data. Figure taken from <a href="#avctrnn_citation">[2].</a></figcaption>
+<figcaption>Example for strong visualization of temporal pattern in time-series data. Figure taken from <a href="#avctrnn_citation">[2]</a>.</figcaption>
 Here, we can clearly see an increase in activity around the 230th time step. If you consider the animation for these two plots ([top row, second and third subplot](#3x4)), you might agree that it is harder to keep the entire history of the activation patterns in mind, specifically how the first half compares to the second half.
 
 
