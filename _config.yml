@@ -109,13 +109,13 @@ analytics:
 author:
   name             : "Finn Rietz"
   avatar           : "/assets/img/me1.jpg"
-  bio              : "Bio-inspired Artifcial Intelligence, Intelligent robotics, Reinforcement Learning."
-  location         : "Hamburg, Germany"
-  email            : "5rietz@informatik.uni-hamburg.de"
+  bio              : "Deep Reinforcement Learning, Explainable AI, Robotics"
+  location         : "Örebro, Sweden"
+  email            : "finn.rietz@oru.se"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "5rietz@informatik.uni-hamburg.de"
+      url: "finn.rietz@oru.se"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -128,12 +128,18 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/frietz58"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=U2HsJNgAAAAJ&hl=de"
+    - label: "ORCID"
+      icon: "fas fa-fw fa-id-card"
+      url: "https://orcid.org/0000-0001-8151-4692"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
-    - label: "KT Research Group"
+    - label: "AAM Lab"
       icon: "fas fa-fw fa-briefcase"
-      url: "https://www.inf.uni-hamburg.de/en/inst/ab/wtm/"
+      url: "https://amm.aass.oru.se/"
 
 # Site Footer
 footer:
