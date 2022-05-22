@@ -115,7 +115,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "finn.rietz@oru.se"
+      # url: "finn.rietz@oru.se"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
