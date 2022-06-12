@@ -69,6 +69,14 @@
     <img src="{{ img_path }}" alt="{{ image_description }}" class="page__hero-image">
   {% endif %}
   {% if page.header.caption %}
-    <span class="page__hero-caption">{{ page.header.caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+    <!-- <span class="page__hero-caption">{{ page.header.caption | markdownify | remove: "<p>" | remove: "</p>" }}</span> -->
+    <!-- <button onclick="document.getElementById('banner-info-span').setAttribute('hidden', true); document.getElementById('banner-info-span').setAttribute('hidden', true);">
+      <span class="page__hero-caption" id="banner-info-span">{{ page.header.caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+    </button>
+    -->
+    <a href="projects/cellular_automaton">
+      <span class="page__hero-caption" id="banner-info-span">{{ page.header.caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+    </a>
+    
   {% endif %}
 </div>
