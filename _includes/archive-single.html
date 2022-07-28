@@ -14,12 +14,20 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | relative_url }}"
-          {% endif %}
+        <!-- 
+          yet another template hack, Im sure there are better ways to do this but... now we can apply custom css
+           styling to the archive item image in the header of the .md post directly, by passing css code in the header.custom_style field.
+          -->
+        <img 
+            {% if post.header.custom_style %}
+              style="{{ post.header.custom_style }}"
+            {% endif %}
+          src=
+            {% if teaser contains "://" %}
+              "{{ teaser }}"
+            {% else %}
+              "{{ teaser | relative_url }}"
+            {% endif %}
           alt="">
       </div>
     {% endif %}
