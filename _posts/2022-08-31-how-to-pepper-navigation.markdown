@@ -38,13 +38,23 @@ gallery2:
   - url: /assets/img/pepper-navigation/raspi-grove-imu-hokuyo-anno.jpg
     image_path: /assets/img/pepper-navigation/raspi-grove-imu-hokuyo-anno.jpg
     alt: Raspberry pi with connected grove hat adapter, MPU-9250 IMU and Hokuyo UST-10LX LIDAR
+gallery3:
+  - url: /assets/img/pepper-navigation/test-env.jpg
+    image_path: /assets/img/pepper-navigation/test-env.jpg
+    alt: Small maze-like testing environment with unique features for easy mapping and debugging
+  - url: /assets/img/pepper-navigation/maze.jpg
+    image_path: /assets/img/pepper-navigation/maze.jpg
+    alt: Obtained map of testing environment with hand-help mapping device
+  - url: /assets/img/pepper-navigation/office_rotated.jpg
+    image_path: /assets/img/pepper-navigation/office_rotated.jpg
+    alt: Obtained map of entire office
 ---
 
 <h2 id="motivation">Motivation and introduction</h2>
 Softbank´s Pepper robot is a popular HRI research platform. As already mentioned in my previous post, their onboard laser sensors hardward supplies very sub-optimal data <a href="#[1]">[1]</a>. Specifically, this data is essentially useless for running SLAM algorithms because a) it is very sparse with only 15 laser beams and b) due to the awkward angle of those beams , the range of those beams is a whopping ~5 meters. I tried `ros-gmapping` with this data and the results were, as expected, not satisfactory. There are two alternatives for achieving autonomous navigation with Pepper robots: One might implement some visual-slam algorithm, i.e. <a href="#[2]">[2]</a>, which we tried, but also found unsatisfactory results due to the shaky, blurry, low-resolution stream of Pepper´s cameras and the relatively featureless environment that is our office building. The last option is building an external mapping device and attaching it to the Pepper, which we did and ultimately found success with. This is far from straightforward and requires a significant time investment, but I hope this post will make the process a little easier for anyone who ever wants to do something similar.
 
 <h2 id="plan">The high-level approach</h2>
-The main driver component for our autonomous navigation approach with Pepper robots is the amazing ROS `hecktor_slam` package <a href="#[3]">[3]</a> from the folks at TUD. Seriously, just look at the amazing results in this video (from 2011, may I add):
+The main driver component for our autonomous navigation approach with Pepper robots is the amazing ROS `hector_slam` package <a href="#[3]">[3]</a> from the folks at TUD. Seriously, just look at the amazing results in this video (from 2011, may I add):
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F8pdObV_df4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Given such results on a handheld device, the overall approach is clear: We just build a similar hardware system as is used in the video, "duct-tape" it onto our Pepper robot and establish communication between the mapping device and Pepper, such that we can map the environment, then run a localization and navigation algorithm to have Pepper autonomously navigate based on the obtained map. Certainly a lot of work but doable. In the following sections, I detail all steps of this approach and attempt to highlight the pitfalls that cost me considerable time along the way.
 <br>
@@ -132,13 +142,38 @@ Secondly, the local time for all three entities must be exactly the same. If I r
 With these things taken care of, you should now be able to access date from the raspberry pi and from the ROS kinetic core on the main ROS server aka desktop. You can test this by visualizing the external LIDAR, the IMU and, for example, Pepper´s laser data in RVIZ on the desktop machine. You should also be able to launch e.g. [rqt-steering](http://wiki.ros.org/rqt_robot_steering) to the desktop and drive Pepper around that way. If this works, your distributed ROS system is working and you should be fine to proceed to the next section.
 
 <h2 id="hector_slam">Mapping with hector_slam</h2>
-Now we can map with hector_slam.
-required ros nodes
-saving map
+Given the (hopefully working) distributed ROS system described above, the first step towards autonomous navigation is of course obtaining a map of the environment. As mentioned initially, here we make use of the great `hector_slam` ROS package. Starting the entire system and creating a map of the environment involves the following steps:
++ Start required sensors (execute these commands on the raspberry pi with the attached sensors):
+  + Start the IMU (for example using the [mentioned launchfile](#IMU))
+  + Start the LIDAR (for example, using the [mentioned launchfile](#lidar))
++ Start Pepper's ROS stack (execute this inside the docker container that communicates with Pepper)
+  + Also start your tool of choice to drive the control the Pepper robot, i.e. [`rqt_robot_steering`](http://wiki.ros.org/rqt_robot_steering)
+To re-iterate, if you follow this guide strictly, the raspberry pi that collects the sensor data as well as the the docker container that runs Pepper's ROS stack are connected to a central ROS server. To verify that this setup is working correctly, on the central server, you should be able to issue commands to move the Pepper robot while also being able to visualzie (or log) the sensor data collected and published on the raspberry pi.
+<br>
+Now, we can start the main `hector_slam` ROS package and create a map of the environment.
++ Start `hector_slam` node (this is done on the more powerful, central ROS server)
+  + Start [`hector_imu_to_tf`](http://wiki.ros.org/hector_imu_attitude_to_tf), this connects the the LIDAR data to the angles reported by the IMU
+  + Start [`hector_geotiff`](http://wiki.ros.org/hector_geotiff), a service for saving the map
+  + **Optionally**, start [`static_transform_publisher`](http://wiki.ros.org/tf#static_transform_publisher), to ensure that the TF tree is valid and associates all sensor data with the `base_link`
+  + Start [`hector_mapping`](http://wiki.ros.org/hector_mapping), the main `hector_slam` node
+
+Note that there is no difference whether you want to create the map using the hand-held device or with the LIDAR and IMU rigidly mounted to the Pepper robot. The reason for this is the package `hector_imu_to_tf` links the LIDAR scans to the IMU angles. In practise, this is done by configuring the system in such a way that the laser is frame is the `base_stabilized` frame, while this frame is estimated using the IMU data.
+TODO, move this elsewhere and reference: http://wiki.ros.org/hector_slam/Tutorials/SettingUpForYourRobot
+
+Thus, if everything works, you should be able to reproduce good results. Here are exemplary mapping results obtained with the above listed hardware. First, we tested and debugged the system in a small, maze-like environment with unique features for easy mapping. Once the system was working well there, we tested it in the main hallway of our office building, and obtained good results.
+{% include gallery id="gallery3" caption="A small testing environment and mapping results." %}
+
+Once the entire environment has been mapped, `hector_geotiff` is used to save the map by executing `rostopic pub syscommand std_msgs/String "savegeotiff"`. This did not work for me immediately and complained with *failed with error 'Device not writable'*. I don't know the root cause of this, however, the following command, which re-creates the target folder and takes care of RWX rights fixef the issue:<br>
+`sudo mkdir /opt/ros/melodic/share/hector_geotiff/maps &&
+sudo chmod -R a+rwx /opt/ros/melodic/share/hector_geotiff/maps &&
+sudo chown -R ubuntu:ubuntu /opt/ros/melodic/share/hector_geotiff`.
+
 
 <h2 id="amcl">Navigation with Adaptive Monte Carlo Localization</h2>
 Finally, we can load the map.
-nasty pitfal
+
+<h2 id="pitfalls">Some Pitfalls to look out for</h2>
+
 
 
 
