@@ -12,11 +12,10 @@ header:
 
 <h1>About me</h1>
 Hey, I'm Finn Rietz, an AI enthusiast and computer scientist from Germany.
-I am currently employed as a Ph.D. student at the <a href="https://amm.aass.oru.se/" target="_blank">Autonomous Mobile Manipulation Lab</a>, funded by the <a href="https://wasp-sweden.org/" target="_blank">WASP program</a> and under the supervision of <a href="https://amm.aass.oru.se/people/johannes-stork/" target="_blank">Johannes Stork</a> and <a href="https://amm.aass.oru.se/people/todor-stoyanov/" target="_blank">Todor Stoyanov</a>.
+I am currently employed as a Ph.D. student at the Adaptive and Interpretable Learning Systems (AILS) Lab, funded by the <a href="https://wasp-sweden.org/" target="_blank">WASP program</a> and under the supervision of <a href="https://amm.aass.oru.se/people/johannes-stork/" target="_blank">Johannes Stork</a>.
+<br><br>
 
-<br>
-
-My research interests are, broadly speaking, Deep Reinforcement Learning (DRL), Explainable AI, and Robotics.
+My research interests are, broadly speaking, Deep Reinforcement Learning (DRL), Transfer Learning, and Robotics.
 I believe that the DRL framework has immense potential for industry automation and optimization, but also think that the intransparency and data inefficiency of deep neural network-based AI systems must be addressed for safe and efficient real-world employment of these technologies.
 
 <br><br>
@@ -25,25 +24,25 @@ I believe that the DRL framework has immense potential for industry automation a
 <h1>About this site</h1>
 This sites is subject to mainly two ideas:<br>
 Firstly, I want to contribute to the community and share my insight about topics I care about, especially where I experienced a lack of material or documentation.
-However, you might also find me writing about topics that are already well covered, in which case I simply wanted to take my spin on a topic. This addresses the blog posts you find on this website.
+However, you might also find me writing about topics that are already well covered, in which case I simply wanted to take my spin on a topic.
+This addresses the blog posts you find on this website, which are meant to be of educational nature, at least to some extent.
 <br><br>
 
-Secondly, this website serves as my digital business card. Hence, you find some of my projects on here as well. These aim at illustrating a part of my skill-set and, unlike the blog posts, they are not primarily meant to be educational resources (although they might still be informational for some).
+Secondly, this website serves as my digital business card.
+Hence, you find some of my projects on here as well.
+These aim at illustrating a part of my skill-set and, unlike the blog posts, they are not primarily meant to be educational resources (although they might still be informational for some).
+I might also write about purely for fun projects that I did.
 <br><br>
 
-<br><br><br>
+<br><br>
 
 
 <h3 class="archive__subtitle">Latest Post</h3>
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+
+{% assign posts = site.posts %}
+
 
 {% for post in posts limit:1%}
   {% include archive-single.html %}
 {% endfor %}
-
-{% include paginator.html %}
