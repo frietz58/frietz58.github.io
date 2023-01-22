@@ -9,10 +9,6 @@ teaser: >-
   Animated visualization of neural activity in different neural networks, made with Python.
 header:
   teaser: /assets/img/mpl_animate_project/dark.gif
-sidebar:
-  - title: Learnings
-    text: >-
-      &#8226; Matplotlib animation framework
 #    image: /assets/img/forest.jpg
 #    image_alt: "logo"
 #    text: "Designer, Front-End Developer"

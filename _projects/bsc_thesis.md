@@ -9,11 +9,7 @@ teaser: >-
   on convolutional features.
 header:
   teaser: /assets/img/hiob_project/hiob_teaser.png
-sidebar:
-  - title: Learnings
-    text: >-
-      &#8226; Python<br>&#8226; Convolutional Neural Networks<br>&#8226;
-      Visual Object Tracking<br>&#8226; Lots of Computer Vision
+  
 gallery:
   - url: /assets/img/hiob_project/success_plots.png
     image_path: /assets/img/hiob_project/success_plots.png

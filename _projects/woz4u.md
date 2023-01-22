@@ -6,10 +6,6 @@ teaser: >-
     Study visit at the Intelligent Robotics group in Umeå, Sweden: A comprehensive interface for Softbanks Pepper robot.
 header:
   teaser: /assets/woz4u/woz4u.png
-sidebar:
-  - title: Learnings
-    text: >-
-      &#8226; Journal publishing process<br>&#8226; NAOqi API<br>&#8226; Flask library<br>&#8226; jQuerry
 toc: true
 toc_sticky: true
 gallery:
@@ -47,7 +43,7 @@ There were already a number of collaborations between the KT group in Hamburg an
 The most eye-opening experience in this study visit was, by far, going through the lengthy, sometimes tedious process of publishing in a peer-reviewed journal.
 
 
-<!-- 
+<!--
 {% include gallery caption="Some impressions form Umeå." %}
 -->
 
@@ -58,7 +54,7 @@ The idea and requirements behind the interface were formulated by Professor Hell
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Anb5SAnE8Jo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Software architecture
-To make the interface as widely accessible as possible, we support all major operating systems. This includes Debian-based Linux, macOS, and Windows. Furthermore, we provide a docker image hosting the interface, which should eliminate most if not all requirement conflicts. The docker image further eliminates the need to follow the lengthy setup guide, as the interface is accessible as soon as the docker container is running on the network. In the backend, the interface is implemented as a webserver. This conveniently makes the interface accessible via web browser from any machine in the network (including smart phones), which removes any requirements towards the OS, since any modern OS comes with a web browser. 
+To make the interface as widely accessible as possible, we support all major operating systems. This includes Debian-based Linux, macOS, and Windows. Furthermore, we provide a docker image hosting the interface, which should eliminate most if not all requirement conflicts. The docker image further eliminates the need to follow the lengthy setup guide, as the interface is accessible as soon as the docker container is running on the network. In the backend, the interface is implemented as a webserver. This conveniently makes the interface accessible via web browser from any machine in the network (including smart phones), which removes any requirements towards the OS, since any modern OS comes with a web browser.
 
 We had the non-functional requirement that the interface should be easily (re)configurable for different experiments because a tool specialized for one experiment has no general value for the community. As such, we feature a configuration file in `YAML` syntax. Every non-general part of the UI is configurable through that file so that no programming is required to set up the interface for a new experiment. Instead, one simply edits a few content-specific lines in the configuration file. For example, one might want to investigate which gestures are perceived as particularly friendly. For that, one edits which gestures should be accessible from the interface based on the following snippet:
 
@@ -76,7 +72,7 @@ gestures: # Buttons will be created for every item in the list
     key_comb: ["shift", "2"]
 ```
 
-This procedure is the same for all elements in the interface so that the entire interface can easily be configured for different experiments or occasions. 
+This procedure is the same for all elements in the interface so that the entire interface can easily be configured for different experiments or occasions.
 
 
 ### Features
@@ -94,8 +90,3 @@ These features comprise almost everything Pepper's API has to offer. In some cas
 Feel free to read <a href="https://www.frontiersin.org/articles/10.3389/frobt.2021.668057/full" target="_blank">our paper</a> for more details.
 
 We hope that this tool is useful for researchers in the HRI field.
-
-
-
-
-
