@@ -14,13 +14,20 @@ published: true
 toc: true
 toc_sticky: true
 teaser: "Learn how you can backup any Postgress database table into a GoogleDrive folder using two small scripts and the crontab."
+gallery:
+  - url: /assets/img/oauthv2.jpg
+    image_path: /assets/img/oauthv2.jpg
+    alt: Google OAuthv2 screen
+  - url: /assets/img/oauthconfirm.jpg
+    image_path: /assets/img/oauthconfirm.jpg
+    alt: OAuthv2 Confirmation message
 ---
 
 <h2 id="motivation">Motivation and use case</h2>
 
-In this post I will explain how to automate the process of backuping a postgres database table into a GoogleDrive cloud storage location. 
-I encoutered this problem when helping my dad out with some IT related problem, which included the backup process of a Postgress SQL database table. 
-The solution I provide here can, however, easily be adapted to backup <i>whatever</i> and upload it into some GoogleDrive folder. 
+In this post I will explain how to automate the process of backuping a postgres database table into a GoogleDrive cloud storage location.
+I encoutered this problem when helping my dad out with some IT related problem, which included the backup process of a Postgress SQL database table.
+The solution I provide here can, however, easily be adapted to backup <i>whatever</i> and upload it into some GoogleDrive folder.
 
 In my approach, we use two scripts to accomplish this: One script to produce the backup files and a second script that takes care of the uploading process.
 If you wish to upload something else, simply adapt the shell script which, in this case, generate the .sql dumps of the desired postgres database table.
@@ -80,9 +87,8 @@ python drive_upload.py -cf /path/to/config.yaml
 ```
 
 This will open your default browser and ask you to allow "Quickstart" access to that Google accounts drive storage:
+{% include gallery %}
 
-<img src="/assets/img/oauthv2.jpg" class="google_auth_process_pic">
-<img src="/assets/img/oauthconfirm.jpg" class="google_auth_process_pic">
 
 If everything worked, this will create the file `token.pickle` in your current working directory and output `Token file has been acquired, exiting...` to your console. Make sure to adjust to the path of the `token.pickle` file in the `config.yaml` file, so that `drive_upload.py` finds the token, independt of your working directory.
 
