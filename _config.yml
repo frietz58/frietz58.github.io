@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "Finn Rietz"
   avatar           : "/assets/img/me1.jpg"
-  bio              : "Deep Reinforcement Learning, Explainable AI, Robotics"
+  bio              : "Deep Reinforcement Learning, Transfer Learning, Robotics"
   location         : "Örebro, Sweden"
   email            : "finn.rietz@oru.se"
   links:
