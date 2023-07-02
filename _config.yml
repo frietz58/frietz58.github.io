@@ -137,9 +137,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
-    - label: "AAM Lab"
+    - label: "AILS Lab"
       icon: "fas fa-fw fa-briefcase"
-      url: "https://amm.aass.oru.se/"
+      url: "https://ails.aass.oru.se/"
 
 # Site Footer
 footer:

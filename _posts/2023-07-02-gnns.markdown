@@ -1,0 +1,47 @@
+---
+title: "Short analysis of Graph Neural Networks"
+last_modified_at: 2023-07-02 11:19:11 +0200
+categories:
+  - Machine Learning
+tags:
+  - Python
+mathjax: true
+published: false
+toc: true
+toc_sticky: true
+teaser: "Analysis of Graph Neural Networks by comparison to Multilayer Perceptrons on a simple graph-classification task."
+---
+
+<h2 id="motivation">Motivation and introduction</h2>
+Recently, I became interested in [Graph Neural Networks (GNNs)](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4700287&casa_token=uwI8LLQT1oUAAAAA:55yIFAS86OhKqkbcTYsG4PXcBsKfEk1UJJxCy-Mpg0v-eM7mYAf8iXaIh6U30FsLYc5BGuz4jhE&tag=1) because they were a trending topic in the Machine Learning / Deep Learning community. Thus, in this blog-post, I briefly introduce and motivate GNNs based on novice-level understanding of them. Then, I share some results where I analyse and compare GNNs with classical Multilayer Perceptrons (MLPs) on a simple graph classification task.
+<br>
+
+
+<h2 id="gnns">Graph Neural Networks: What, why, and how?</h2>
+So what are GNNs, why do we need them and how do the fundamentally work? GNNs are, broadly and informally speaking, Neural Networks (NNs) that can process and exploit non-Euclidean data-structures, like graphs. Just to quickly state this before we move on, Euclidean vector spaces generalize from 2D or 3D Euclidean geometery (parallel lines never intersect, laws of trigonomery apply) to higher-dimensional space. Classical NNs can not caputure and exploit the complex structure of graph data because they assume fixed-dimensional, grid-like (aka Euclidean) data. MLPs, for example, assume that their input features come from an arbitrary-but-fixed-dimensional, continuous, real-valued vector space. Convolutional Neural Networks (CNNs) exploit the *Euclidean* nature of their input data even more explicitly, since they learn local filters that are applied over the entire input space in a sliding-window manner, thereby assuming Euclidean structure. To intuitively see that classical CNNs can not work on non-Euclidean data, consider the following picture:  
+<p style="text-align: center;">
+<img src="/assets/img/gnns/grid_to_graph.png" style="height: 200px;">
+</p>
+
+Its clear how to apply 2x2 filters at coordinates (0, 0) and (1, 1) for Euclidean (e.g. image) data, but unclear how to do the same for non-Euclidean (e.g. graph) data.
+And this is, essentially, the motivation behind GNNs. Many intereseting problems feature non-euclidean data (e.g. graph/node classification, graph/node regession, social network analysis, molecular chemistry, anomaly detection) and we would like to have Neural Networks that can exploit and reason about data from such domains.
+
+With the motivation for GNNs out of the way, let's see how GNNs work. Note that there are multiple ways of implementing GNNs and that the following, I will summarize only [Kipf and Willing](https://arxiv.org/pdf/1609.02907.pdf)'s method, which introduces the Graph Convolution Network (GCN). 
+As the name implies, with the GCN, Kipf and Willing essentially generalize CNNs non-Euclidean data. 
+At a very high level and as we shall see, this is done by replacing the neighborhood indexing of convolution filters in CNNs by a summation over the neigborhood of vertices in a graph. 
+The GCN operates on a graph $$\mathcal{G = (V, E)}$$, where $$\mathcal{V}$$ are the graph's vertices and $$\mathcal{E}$$ are the graph's edges. Additionally, each vertix $$\mathcal{V}_i$$ in the graph might be described by $$n$$-dimensional feature vector. 
+Furthermore, $$A$$ refers to the adjacency matrix of graph $$\mathcal{G}$$, which is a different way of describing the edges in a graph. Lets skip the theoretical derivation of the GCN (see [the paper](https://arxiv.org/pdf/1609.02907.pdf) for details) and jump right to the model definition. Kipf and Willing provide the layer-wise definition of the GCN (in matrix notation) like this
+
+$$
+H^{(l+1)} = \sigma \big( \underbrace{D^{-\frac{1}{2}} \hat{A} D^{-\frac{1}{2}}}_{\text{normalized } \hat{A}} H^{(l)} W^{(l)} \big),
+$$
+
+where $$\sigma$$ is a non-linear activation function, $$D_{ii} = \sum_j \hat{A}_{ij}$$ (multiplying by this matrix essentially normalizes $$\hat{A}$$), $$\hat{A} = A + I$$ (adding the identity matrix $$I$$ to $$A$$ is a trick that adds self connections to each vertix in the graph which is beneficial for representation learning), $$H^{(l)}$$ is the hidden activation of the previous layer $$l$$, and $$W^{(l)}$$ is the learnable weight matrix of layer $$l$$. For input layer $$H^{(l=0)}$$ of the GCN we simply have $$H^{(l=0)} = X$$, aka the $n \times d$-dimensional feature matrix of the Graph $$\mathcal{G}$$, where $$d$$ corresponds to the number of vertices in the graph. 
+
+
+
+<h2 id="summary">Summary</h2>
+
+Cheers,<br>
+*Finn*.
+<br>
