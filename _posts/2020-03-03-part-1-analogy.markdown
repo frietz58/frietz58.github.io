@@ -5,7 +5,7 @@ categories:
 tags:
   - Machine Learning fundamentals
 mathjax: true
-published: true
+published: false
 toc: true
 toc_sticky: true
 teaser: "In part one of the 'Machine Learning fundamentals' series, we explore the Loss Landscape and its association to the Gradient Descent algorithm."
