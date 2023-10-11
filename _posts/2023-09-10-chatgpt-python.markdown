@@ -109,6 +109,12 @@ This setup relies on manually copying the ChatGPT data into a Python file, which
 Of course, this could be avoided by making use of ChatGPT's API, but unfortunately, I haven't gotten access yet, even after paying for ChatGPT premium, solely to gain API access. Oh well ¯\\_(ツ)_/¯...
 
 
+The resulting deck, diplayed in the AnkiDroid app, looks as follows:
+<figure>
+  <img src="/assets/img/genanki/anki.jpg">
+  <figcaption>Example flashcard with ChatGPT generated content displayed in the AnkiDroid app. The deck is created with the above give code and synchronized to the mobile device via AnkiWeb.</figcaption>
+</figure>
+
 <h2 id="summary">Summary and conclusion</h2>
 So, in summary, ChatGPT can be used to create vocabularies with translation between any language. 
 These vocabularies can have arbitrary auxiliary  information, like example sentences or different word forms. 
