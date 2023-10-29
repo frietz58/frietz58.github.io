@@ -1,5 +1,5 @@
 ---
-title: "Soft Actor Critic: Deep Reinforcement Learning for robotics?"
+title: "Soft Actor Critic: Deep Reinforcement Learning for Robotics?"
 last_modified_at: 2020-09-29 22:05:37 +0200
 categories:
   - Machine Learning

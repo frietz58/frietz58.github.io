@@ -1,5 +1,5 @@
 ---
-title: "Decorate-Sort-Undecorate: Advanced list sorting in Python"
+title: "Decorate-Sort-Undecorate: List Sorting in Python"
 last_modified_at: 2019-12-9 23:07:42 +0200
 categories:
   - Python

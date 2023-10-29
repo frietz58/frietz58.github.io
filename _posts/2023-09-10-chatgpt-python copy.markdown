@@ -1,5 +1,5 @@
 ---
-title: "Easy language learning with ChatGPT and Python "
+title: "Easy Language Learning with ChatGPT and Python "
 last_modified_at: 2023-09-10 14:46:12 +0200
 categories:
   - Machine Learning

@@ -1,5 +1,5 @@
 ---
-title: "Automatically backup any Postgres database table into a GoogleDrive"
+title: "Automatically Backup any Postgres Database Table into a GoogleDrive"
 last_modified_at: 2019-09-23 21:57:43 +0200
 categories:
   - Python

@@ -1,5 +1,5 @@
 ---
-title: "Docker + ROS: How to listen to ROS nodes in external Docker containers"
+title: "Docker + ROS: How to listen to ROS nodes in External Docker Containers"
 last_modified_at: 2020-08-20 20:50:37 +0200
 categories:
   - Linux

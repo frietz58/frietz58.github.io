@@ -1,5 +1,5 @@
 ---
-title: "Autonomous navigation with Pepper robots"
+title: "Autonomous Navigation with Pepper Robots"
 last_modified_at: 2022-12-02 11:19:11 +0200
 categories:
   - Linux
