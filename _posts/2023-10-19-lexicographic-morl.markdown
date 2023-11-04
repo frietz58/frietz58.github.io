@@ -245,6 +245,7 @@ The remaining, permitted actions can be used for optimizing lower-priority tasks
 By relying on the local form of the lexicographic constraint in (9) and the resulting indifference space, we eliminated the need for computing the intractable set $$\Pi_i$$ for policy search. 
 This is because instead of computing $$\Pi_i$$, the action indifference $$\mathcal{A}_{\succ i}$$ gives rise to a new MDP $$M_{\succ i}$$, which uses the scalar reward $$r_i$$ and whose action space no longer corresponds to $$\mathcal{A}$$, but to the indifference space $$\mathcal{A}_{\succ i}$$.
 In this new MDP $$\mathcal{M}_{\succ i}$$ we can perform **unconstrained** policy search to optimize task $$r_i$$, since the lexicographic constraint is moved into the action space and thereby always satisfied by construction.
+This is the short version, the (very cool and intuitive) mathematical derivation and justification of this approach can be found in Section A of the supplementary material of [our paper](https://arxiv.org/pdf/2310.02360.pdf).
 
 Based on this insight, we propose our learning algorithm, Prioritized Soft Q-Decomposition (PSQD), for continuous action-space lexicographic MORL tasks. 
 PSQD combines Q-Decomposition with Soft Q-Learning by first pre-training on all subtasks $$r_1, \dots, r_n$$ of the lexicographic MORL problem.
@@ -334,11 +335,38 @@ The bottom row images visualize the indifference spaces of the constituent Q-fun
 Both tasks share the obstacle avoidance component $$\mathcal{\bar{A}}_{\succ 1}$$, but have different constraints for the additional task that is varied between the two conditions, $$\mathcal{\bar{A}}_{\succ 2}$$ in (c) and $$\mathcal{\bar{A}}_{\succ 3}$$ in (d).
 This aims to illustrate how lexicographic constraints can easily and intuitively be used to induce different, complex behaviors.
 
+Lastly, to demonstrate the efficacy of our method in high-dimensional settings, or, a bit more colloquially, to show that our method scales, we perform a simulated joint-control experiment.
+Here, the action space is in $$\mathbb{R}^9$$ and corresponds to the joint torques of a Franke Emika Panda Robot. 
+The higher-priority task, $$r_1$$, corresponds to avoiding a certain subspace of the workspace (red area), while the lower-priority task, $$r_2$$,  corresponds to reaching a certain end-effector position (green sphere).
+First, consider a standard MORL algorithm that relies on linear scalarization of the vector-valued reward function.
+The agent ignores the red area and greedily moves toward the target end-effector position:
+<video width="100%" controls>
+	<source src="/assets/img/psqd/franka_reach_unconstrained.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+</video> 
+This can happen due to poor reward scale or poorly chosen scalarization weights.
+
+Let's contrast this with our method. 
+We simply define the lexicographic task priority $$o = \langle r_1 \succ r_2\rangle$$, set some low threshold, e.g. $$\varepsilon_1 = 1$$, and obtain the following (zer-oshot) result:
+<video width="100%" controls>
+	<source src="/assets/img/psqd/franka_reach_zeroshot.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+</video> 
+Here, after separately learning the subtask, even in the zero-shot setting, the agent does not enter the forbidden part of the workspace. 
+To obtain the optimal agent for the lexicographic MORL task, i.e. reaching the target end-effect position while avoiding the forbidden part of the workspace, we perform our finetuning/adaptation step to learn the long-term consequences of the lexicographic constraint.
+This results in the desired behavior and verifies that our method is also applicable to MDPs with high-dimensional action spaces:
+<video width="100%" controls>
+	<source src="/assets/img/psqd/franka_reach_adapted.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+</video>
+<br>
+
 There are some additional, nice properties of our method that I have only mentioned briefly or skipped entirely in this blog post.
 Firstly, I want to mention how our method benefits sample-efficiency.
 PSQD transfers knowledge between from simple subtasks to complex, lexicographic MORL problems.
 Thus, we are not learning the complex, lexicographic MORL problem from scratch, rather, we transfer the pre-trained subtask solutions and perform a simple finetuning step to obtain the optimal solution to the lexicographic MORL tasks.
 In a nutshell, this implies that we only need to learn once, for example, how to avoid obstacles, we can then re-use this learned behavior every time we want to exploit it as part of a lexicographic MORL problem.
+Furthermore, each lexicographic task-priority constraints in effect ``shrinks'' the action/search space of the RL algorithm, which makes it easier to explore the MDP and to discover the optimal solution.
 Secondly, PSQD respects lexicographic priority constraints even during training and thereby makes for a safe exploration framework.
 This is again in stark contrast to standard MORL approaches that rely on scalarization and learn each problem from scratch.
 Lastly, PSQD benefits interpretability of the final agent, since we can inspect the constituent Q-functions and corresponding indifferent spaces to understand the agent's action selection process.
