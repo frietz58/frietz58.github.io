@@ -1,5 +1,5 @@
 ---
-title: "Hokuyo UST-10LX with ROS setup"
+title: "Hokuyo UST-10LX with ROS Setup"
 last_modified_at: 2021-08-10 29:50:33 +0200
 categories:
   - Linux
