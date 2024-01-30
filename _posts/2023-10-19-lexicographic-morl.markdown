@@ -373,12 +373,12 @@ Lastly, PSQD benefits interpretability of the final agent, since we can inspect 
 
 <h2 id="summary">Summary and conclusion</h2>
 And that's it. 
-This blog post presents a short summary of our recent work, [Prioritized Soft Q-Decomposition for Lexicographic Reinforcement Learning](https://arxiv.org/pdf/2310.02360.pdf), which is currently under review at ICLR 2024. 
+This blog post presents a short summary of our recent work, [Prioritized Soft Q-Decomposition for Lexicographic Reinforcement Learning](https://arxiv.org/pdf/2310.02360.pdf), which ~is currently under review~ has been accepted at ICLR 2024. 
 The take-away points are as follows:
 + Reject scalar reward engineering, and embrace lexicographic task-priority constraints. Lexicographic constraints are much easier to define and have additional benefits, compared to cumbersome, manual tuning of reward scale coefficients. 
-+ Our algorithm, PSQD, solves continuous action-space, lexicographic MORL problems, while explointing the Q-Decomposition method to transfer knowledge from simple subtasks to the complex lexicographic MORL problem.
++ Our algorithm, PSQD, solves continuous action-space, lexicographic MORL problems, while explointing the Q-Decomposition method to transfer knowledge from simple subtasks to complex, lexicographic MORL problems.
 
-We are currently working on the successor paper, where we generalize PSQD to even more complex tasks and replace soft Q-Learning with a more stable DRL algorithm. 
+We are currently working on the successor paper, where we replace soft Q-Learning with a more stable DRL algorithm. 
 
 Cheers,<br>
 *Finn*.
