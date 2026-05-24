@@ -108,7 +108,7 @@ analytics:
 # Site Author
 author:
   name             : "Finn Rietz"
-  avatar           : "/assets/img/me-freja.jpg"
+  avatar           : "/assets/img/me2.jpg"
   bio              : "Sequential Decision Making under Uncertainty, Deep Learning, Probabilistic Modeling"
   location         : "Örebro, Sweden"
   email            : "finn.rietz@oru.se"
@@ -133,13 +133,13 @@ author:
       url: "https://scholar.google.com/citations?user=U2HsJNgAAAAJ&hl=de"
     - label: "ORCID"
       icon: "fas fa-fw fa-id-card"
-      url: "https://orcid.org/0000-0001-8151-4692"
+      # url: "https://orcid.org/0000-0001-8151-4692"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
     - label: "AILS Lab"
       icon: "fas fa-fw fa-briefcase"
-      url: "http://ails.aass.oru.se/"
+      # url: "http://ails.aass.oru.se/"
 
 # Site Footer
 footer:
